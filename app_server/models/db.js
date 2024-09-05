@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
 
-let dbURL = 'mongodb://127.0.0.1/Loc8r';
+let dbURL = 'mongodb+srv://pavankumarmetla:RU3jPHAADeOdUuPN@contactmanager.oj7jnte.mongodb.net/Loc8r?retryWrites=true&w=majority&appName=contactManager';
 if (process.env.NODE_ENV === 'production') {
   dbURL = process.env.DB_HOST || process.env.MONGODB_URI;
 }
@@ -51,7 +51,7 @@ process.on('SIGINT', () => {
   });
 });
 process.on('SIGTERM', () => {
-  gracefulShutdown('Heroku app shutdown', () => {
+  gracefulShutdown('Render app shutdown', () => {
     process.exit(0);
   });
 });
